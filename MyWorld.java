@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Game Idea: Fruit Ninja
  * 
- * @author Nicholas Ng
+ * @author (Nicholas Ng)
  * @version (a version number or a date)
  */
 public class MyWorld extends World
@@ -17,5 +17,12 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        Apple apple = new Apple();
+        addObject(apple, 600, 400);
+        
+        
+        Mouse mouse = new Mouse();
+        addObject(mouse, 300, 300);
     }
 }
