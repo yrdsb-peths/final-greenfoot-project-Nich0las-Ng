@@ -15,5 +15,11 @@ public class Human extends Actor
     public void act()
     {
         // Add your action code here.
+        int x = getX();
+        int y = getY();
+        while(y != 300)
+        {
+            move(-2);
+        }
     }
 }
