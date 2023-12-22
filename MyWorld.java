@@ -19,10 +19,11 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         Human player = new Human();
+        
         addObject(player, 200, 300);
         
         getBackground().scale(600, 480);
         
-        
+        addObject(new Floor(3), 600, 400);
     }
 }
