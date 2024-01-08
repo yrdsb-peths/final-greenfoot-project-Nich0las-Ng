@@ -17,13 +17,15 @@ public class Floor extends Actor
     public void act()
     {
         // Add your action code here.
+        int worldWidth = getWorld().getWidth();
         
+        setLocation(getX() - speed, getY());
     }
     
     public Floor(int rate)
     {
         speed = rate;
-        GreenfootImage image = new GreenfootImage(600,10);
+        GreenfootImage image = new GreenfootImage(20,10);
         image.fill();
         setImage(image);
     }

@@ -22,8 +22,8 @@ public class MyWorld extends World
         
         addObject(player, 200, 300);
         
-        getBackground().scale(600, 480);
+        getBackground().scale(920, 760);
         
-        addObject(new Floor(3), 600, 400);
+        addObject(new Floor(3), 500, 350);
     }
 }

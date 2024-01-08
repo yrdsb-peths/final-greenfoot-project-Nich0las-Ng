@@ -13,7 +13,7 @@ public class Human extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     static final int gravity = 2;
-    static final int jumpForce = 30;
+    static final int jumpForce = 20;
     int xSpeed = 4;
     int ySpeed = 0;
     
@@ -28,12 +28,12 @@ public class Human extends Actor
     
     private void moveVertically()
     {
-        int worldHeight = getWorld().getHeight();
+        int worldHeight = getWorld().getHeight() - 50;
         int myHeight = getImage().getHeight();
         boolean onGround = false;
         ySpeed += gravity;
         setLocation(getX(), getY()+ySpeed);
-        if(getY() > worldHeight-myHeight/2)
+        if(getY() > worldHeight - 10)
         {
             ySpeed = 0;
             onGround = true;

@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Human.image=man.png
-class.MyWorld.image=City.jpg
+class.MyWorld.image=Savannah.jpg
 class.TitleScreen.image=1000_F_551969822_u6KLG9LonYf1e5dmRRXPTUUu8HkXqtZT.jpg
 dependency1.from=MyWorld
 dependency1.to=Human
@@ -60,5 +60,5 @@ target4.y=0
 version=3.0.0
 width=827
 world.lastInstantiated=MyWorld
-xPosition=93
-yPosition=150
+xPosition=355
+yPosition=134
