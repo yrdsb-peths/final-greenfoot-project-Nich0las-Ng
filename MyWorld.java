@@ -24,6 +24,6 @@ public class MyWorld extends World
         
         getBackground().scale(920, 760);
         
-        addObject(new Floor(3), 500, 350);
+        addObject(new Floor(0), 300, 390);
     }
 }

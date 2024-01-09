@@ -28,12 +28,18 @@ public class Human extends Actor
     
     private void moveVertically()
     {
-        int worldHeight = getWorld().getHeight() - 50;
+        int worldHeight = getWorld().getHeight() - 30;
         int myHeight = getImage().getHeight();
         boolean onGround = false;
         ySpeed += gravity;
         setLocation(getX(), getY()+ySpeed);
         if(getY() > worldHeight - 10)
+        {
+            ySpeed = 0;
+            onGround = true;
+        }
+        
+        if(isTouching(Floor.class))
         {
             ySpeed = 0;
             onGround = true;
