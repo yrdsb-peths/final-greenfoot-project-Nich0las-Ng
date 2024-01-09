@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Game Idea: Fruit Ninja
+ * Game Idea: Offline Dinasour Game
  * 
  * @author (Nicholas Ng)
- * @version (a version number or a date)
+ * @version (Jan 9 2024)
  */
 public class MyWorld extends World
 {
