@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Game Idea: Offline Dinasour Game
+ * Game Idea:
  * 
  * @author (Nicholas Ng)
- * @version (Jan 9 2024)
+ * @version
  */
 public class MyWorld extends World
 {
