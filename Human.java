@@ -35,14 +35,19 @@ public class Human extends Actor
         setLocation(getX(), getY()+ySpeed);
         if(getY() > worldHeight - 10)
         {
+            setLocation(getX(), worldHeight - myHeight / 2 + 13);
             ySpeed = 0;
             onGround = true;
         }
         
-        if(isTouching(Floor.class))
+        int dy = (int)Math.signum(ySpeed);
+        while(getOneIntersectingObject(null) != null)
         {
-            ySpeed = 0;
-            onGround = true;
+            setLocation(getX(), getY() - dy);
+            if((dy > 0) && onGround == true)
+            {
+                ySpeed = 0;
+            }
         }
         
         if(onGround && Greenfoot.isKeyDown("space")) 
