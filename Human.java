@@ -12,17 +12,13 @@ public class Human extends Actor
      * Act - do whatever the Human wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static final int gravity = 2;
-    static final int jumpForce = 20;
-    int xSpeed = 4;
+    static final int gravity = 1;
+    static final int jumpForce = 15;
     int ySpeed = 0;
     
     public void act()
     {
         // Add your action code here.
-        int x = getX();
-        int y = getY();
-        
         moveVertically();
     }
     
@@ -30,8 +26,11 @@ public class Human extends Actor
     {
         int worldHeight = getWorld().getHeight() - 30;
         int myHeight = getImage().getHeight();
+        
         boolean onGround = false;
+        
         ySpeed += gravity;
+        
         setLocation(getX(), getY()+ySpeed);
         if(getY() > worldHeight - 10)
         {
@@ -41,7 +40,7 @@ public class Human extends Actor
         }
         
         int dy = (int)Math.signum(ySpeed);
-        while(getOneIntersectingObject(null) != null)
+        while(getOneIntersectingObject(Floor.class)!= null)
         {
             setLocation(getX(), getY() - dy);
             if((dy > 0) && onGround == true)
@@ -53,6 +52,11 @@ public class Human extends Actor
         if(onGround && Greenfoot.isKeyDown("space")) 
         {
             ySpeed =-jumpForce;
+        }
+        
+        if(isTouching(Obstacles.class))
+        {
+            
         }
     }
 }
