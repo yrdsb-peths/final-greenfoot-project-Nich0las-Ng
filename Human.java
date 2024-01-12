@@ -12,9 +12,9 @@ public class Human extends Actor
      * Act - do whatever the Human wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static final int gravity = 1;
-    static final int jumpForce = 15;
-    int ySpeed = 0;
+    static final double gravity = 0.5;
+    static final int jumpForce = 10;
+    double ySpeed = 0;
     
     public void act()
     {
@@ -31,7 +31,7 @@ public class Human extends Actor
         
         ySpeed += gravity;
         
-        setLocation(getX(), getY()+ySpeed);
+        setLocation(getX(), getY() + (int)ySpeed);
         if(getY() > worldHeight - 10)
         {
             setLocation(getX(), worldHeight - myHeight / 2 + 13);
@@ -57,6 +57,9 @@ public class Human extends Actor
         if(isTouching(Obstacles.class))
         {
             
+            
         }
     }
+    
+    
 }
