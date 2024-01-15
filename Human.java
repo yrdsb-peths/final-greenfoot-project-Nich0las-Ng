@@ -54,10 +54,11 @@ public class Human extends Actor
             ySpeed =-jumpForce;
         }
         
+        MyWorld world = (MyWorld) getWorld();
         if(isTouching(Obstacles.class))
         {
-            
-            
+            world.gameOver();
+            world.removeObject(this);
         }
     }
     
