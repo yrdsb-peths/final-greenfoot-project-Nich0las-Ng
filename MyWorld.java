@@ -14,6 +14,11 @@ public class MyWorld extends World
      * 
      */
     int ySpeed = 1;
+    
+    SimpleTimer scoreTimer = new SimpleTimer();
+    public int score = 0;
+    Label scoreLabel;
+    int level = 1;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -28,6 +33,21 @@ public class MyWorld extends World
         addObject(new Floor(0), 300, 390);
         
         addObject(new Obstacles(2), 630, 365);
+        
+        scoreTimer.mark();
+        scoreLabel = new Label(0, 70);
+        addObject(scoreLabel, 50, 50);
+    }
+    
+    public void increaseScore()
+    {
+        score = scoreTimer.millisElapsed();
+        scoreLabel.setValue(score);
+        
+        if(score % 1000 == 0)
+        {
+            level += 1;
+        }
     }
     
     public void createObstacles()

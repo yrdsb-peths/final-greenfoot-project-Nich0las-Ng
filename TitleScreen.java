@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    Label itleLabel = new Label("Welcome to HayBail", 60);
-    Label oveLabel = new Label("use A and D to move", 40);
-    Label tartLabel = new Label("Press <<SPACE>> to start", 40);
+    //To keep count of what my labels are
+    Label titleLabel = new Label("Welcome to Tumbleweed", 60);
+    Label moveLabel = new Label("Press Space to Jump", 40);
+    Label gameMecLabel = new Label("To Play Dogde the Tumbleweed", 40);
+    Label startLabel = new Label("Press <<ENTER>> to start", 40);
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -20,7 +22,37 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         getBackground().scale(920, 760);
-        
-        
+
+        prepare();
+    }
+    
+    public void act()
+    {
+        //Start the game if user presses the space bar
+        if(Greenfoot.isKeyDown("enter"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Label label = new Label("Welcome to Tumbleweed", 60);
+        addObject(label,348,90);
+        label.setLocation(300,90);
+        Label label2 = new Label("Press SPACE to Jump", 40);
+        addObject(label2,275,160);
+        label2.setLocation(300,170);
+        Label label3 = new Label("To Play Dogde the Tumbleweed", 40);
+        addObject(label3,289,230);
+        label3.setLocation(300,250);
+        Label label4 = new Label("Press <<ENTER>> To Start", 40);
+        addObject(label4,279,307);
+        label4.setLocation(300,330);
     }
 }
