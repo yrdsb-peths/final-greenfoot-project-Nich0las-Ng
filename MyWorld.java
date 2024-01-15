@@ -14,7 +14,7 @@ public class MyWorld extends World
      * 
      */
     int ySpeed = 1;
-    
+
     SimpleTimer scoreTimer = new SimpleTimer();
     public int score = 0;
     Label scoreLabel;
@@ -23,33 +23,32 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
-        
+
         Human player = new Human();
-        
+
         addObject(player, 200, 350);
-        
+
         getBackground().scale(920, 760);
-        
+
         addObject(new Floor(0), 300, 390);
-        
+
         addObject(new Obstacles(2), 630, 365);
-        
+
         scoreTimer.mark();
         scoreLabel = new Label(0, 70);
         addObject(scoreLabel, 50, 50);
     }
-    
+
     public void increaseScore()
     {
-        score = scoreTimer.millisElapsed();
-        scoreLabel.setValue(score);
-        
-        if(score % 1000 == 0)
-        {
-            level += 1;
-        }
+        score++;
+        scoreLabel.setValue(score);    
     }
-    
+
+    public void increaseLevel(){
+        level += 1;
+    }
+
     public void createObstacles()
     {
         Obstacles obstacles = new Obstacles(ySpeed + 1);
@@ -65,5 +64,17 @@ public class MyWorld extends World
         }
         int y = 365;
         addObject(obstacles, x, y);
+    }
+
+    public void act() {
+        if(scoreTimer.millisElapsed() > 1000) {
+            scoreTimer.mark();
+            increaseScore();   
+        }
+        
+        if(score % 1000 == 0) {
+            increaseLevel();
+        }
+
     }
 }
