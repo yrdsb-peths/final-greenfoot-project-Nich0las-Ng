@@ -15,9 +15,13 @@ public class MyWorld extends World
      */
     int ySpeed = 2;
 
+    SimpleTimer obstacleTimer = new SimpleTimer();
+    int summonSpeed = 2000;
     SimpleTimer scoreTimer = new SimpleTimer();
     public int score = 0;
     Label scoreLabel;
+    int level = 1;
+    int objectSpeed = 2;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -45,18 +49,20 @@ public class MyWorld extends World
 
     public void createObstacles()
     {
-        Obstacles obstacles = new Obstacles(ySpeed);
         int place = Greenfoot.getRandomNumber(3);
         int x = 630;
+        int y = 365;
         if(place % 2 == 0)
         {
             x = -30;
+            objectSpeed = -objectSpeed;
         }
         if(place % 2 ==1)
         {
             x = 630;
+            objectSpeed = objectSpeed;
         }
-        int y = 365;
+        Obstacles obstacles = new Obstacles(objectSpeed);
         addObject(obstacles, x, y);
     }
     
@@ -66,11 +72,12 @@ public class MyWorld extends World
             increaseScore();
         }
         
-        if(score % 30 == 0) {
+        if(score % 20 == 0) {
             increaseLevel();
         }
         
-        if(score % 2 == 0) {
+        if(obstacleTimer.millisElapsed() > summonSpeed) {
+            obstacleTimer.mark();
             createObstacles();
         }
     }
@@ -83,6 +90,8 @@ public class MyWorld extends World
 
     public void increaseLevel(){
         int setSpeed = ySpeed += 1;
+        level = level += 1;
         ySpeed = setSpeed;
+        objectSpeed = level + 1;
     }
 }
