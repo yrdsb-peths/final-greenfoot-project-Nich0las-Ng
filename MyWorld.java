@@ -18,7 +18,7 @@ public class MyWorld extends World
     SimpleTimer obstacleTimer = new SimpleTimer();
     int summonSpeed = 2000;
     SimpleTimer scoreTimer = new SimpleTimer();
-    public int score = 0;
+    public int score = 1;
     Label scoreLabel;
     int level = 1;
     int objectSpeed = 2;
