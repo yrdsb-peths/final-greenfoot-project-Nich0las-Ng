@@ -26,8 +26,6 @@ public class Human extends Actor
     
     private void moveHorizontally()
     {
-        int worldWidth = getWorld().getWidth();
-        int myWidth = getImage().getWidth();
         int dx = 0;
         if(Greenfoot.isKeyDown("left"))
         {
@@ -38,11 +36,6 @@ public class Human extends Actor
             dx++;
         }
         setLocation(getX() + dx * xSpeed, getY());
-        
-        while(getOneIntersectingObject(Floor.class) != null)
-        {
-            setLocation(getX() - dx, getY());
-        }
     }
     
     private void moveVertically()
@@ -81,7 +74,7 @@ public class Human extends Actor
         if(isTouching(Obstacles.class))
         {
             world.gameOver();
-            world.removeObject(this);
+            Greenfoot.stop();
         }
     }
     

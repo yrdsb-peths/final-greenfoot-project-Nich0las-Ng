@@ -14,20 +14,28 @@ public class Obstacles extends Actor
      */
     int speed;
     
-    GreenfootImage[] idle = new GreenfootImage[6];
+    GreenfootImage[] idle = new GreenfootImage[5];
+    SimpleTimer animationTimer = new SimpleTimer();
     
     public Obstacles()
     {
-        for(int i = 0;i < idle.length; i++)
+        for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/tumbleweed_idle/idle" + i + ".png");
         }
+        animationTimer.mark();
         setImage(idle[0]);
     }
     
     int imageIndex = 0;
     public void animateTumbleweed()
     {
+        if(animationTimer.millisElapsed() < 1000)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
     }
