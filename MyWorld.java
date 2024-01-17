@@ -17,6 +17,7 @@ public class MyWorld extends World
 
     SimpleTimer obstacleTimer = new SimpleTimer();
     int summonSpeed = 2000;
+    SimpleTimer levelIncrease = new SimpleTimer();
     SimpleTimer scoreTimer = new SimpleTimer();
     public int score = 1;
     Label scoreLabel;
@@ -72,7 +73,8 @@ public class MyWorld extends World
             increaseScore();
         }
         
-        if(score % 20 == 0) {
+        if(levelIncrease.millisElapsed() > 10000) {
+            levelIncrease.mark();
             increaseLevel();
         }
         
@@ -93,5 +95,6 @@ public class MyWorld extends World
         level = level += 1;
         ySpeed = setSpeed;
         objectSpeed = level + 1;
+        summonSpeed = 2000 - 100 * (level - 1);
     }
 }

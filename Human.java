@@ -39,7 +39,7 @@ public class Human extends Actor
         }
         setLocation(getX() + dx * xSpeed, getY());
         
-        while(getOneIntersectingObject(null) != null)
+        while(getOneIntersectingObject(Floor.class) != null)
         {
             setLocation(getX() - dx, getY());
         }

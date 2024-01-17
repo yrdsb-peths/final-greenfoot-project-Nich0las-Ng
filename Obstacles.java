@@ -12,22 +12,15 @@ public class Obstacles extends Actor
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int speed;
+    
     GreenfootImage[] idle = new GreenfootImage[6];
     
-    int speed;
-    public void act()
+    public Obstacles()
     {
-        // Add your action code here.
-        int worldWidth = getWorld().getWidth();
-        
-        setLocation(getX() - speed, getY());
-    }
-    
-    public void idle()
-    {
-        for(int i = 0; i < 6; i++)
+        for(int i = 0;i < idle.length; i++)
         {
-            idle[i] = new GreenfootImage("image/tumbleweed_idle/idle" + i + "png");
+            idle[i] = new GreenfootImage("images/tumbleweed_idle/idle" + i + ".png");
         }
         setImage(idle[0]);
     }
@@ -36,8 +29,20 @@ public class Obstacles extends Actor
     public void animateTumbleweed()
     {
         setImage(idle[imageIndex]);
-        imageIndex = imageIndex + 1 % idle.length;
+        imageIndex = (imageIndex + 1) % idle.length;
     }
+    
+    public void act()
+    {
+        // Add your action code here.
+        int worldWidth = getWorld().getWidth();
+        
+        setLocation(getX() - speed, getY());
+        
+        animateTumbleweed();
+    }
+    
+    
     
     public Obstacles(int rate)
     {
