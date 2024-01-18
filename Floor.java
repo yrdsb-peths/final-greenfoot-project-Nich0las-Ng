@@ -22,6 +22,9 @@ public class Floor extends Actor
         setLocation(getX() - speed, getY());
     }
     
+    /**
+     * Create a black line/floor for the player to stand on
+     */
     public Floor(int rate)
     {
         speed = rate;

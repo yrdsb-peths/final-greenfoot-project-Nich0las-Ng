@@ -17,16 +17,22 @@ public class Obstacles extends Actor
     GreenfootImage[] idle = new GreenfootImage[8];
     SimpleTimer animationTimer = new SimpleTimer();
     
+    /**
+     * Constructor - The code that gets run one time when object is created
+     */
     public Obstacles()
     {
         for(int i = 0; i < idle.length; i++)
         {
-            idle[i] = new GreenfootImage("images/tumbleweed_idle/idle" + i + ".png");
+            idle[i] = new GreenfootImage("images/tumbleweed_idle/idle"+i+".png");
+            idle[i].scale(50, 50);
         }
-        animationTimer.mark();
         setImage(idle[0]);
     }
     
+    /**
+     * Animat the tumbleweed
+     */
     int imageIndex = 0;
     public void animateTumbleweed()
     {
@@ -47,11 +53,12 @@ public class Obstacles extends Actor
         
         setLocation(getX() - speed, getY());
         
-        animateTumbleweed();
+        // animateTumbleweed();
     }
     
-    
-    
+    /**
+     * Sets the speed of the tumbleweed
+     */
     public Obstacles(int rate)
     {
         speed = rate;

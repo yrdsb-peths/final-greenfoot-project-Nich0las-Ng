@@ -24,6 +24,10 @@ public class Human extends Actor
         moveHorizontally();
     }
     
+    /**
+     * Allows the Player to move left and right 
+     * using the left and right arrow keys
+     */
     private void moveHorizontally()
     {
         int dx = 0;
@@ -38,6 +42,9 @@ public class Human extends Actor
         setLocation(getX() + dx * xSpeed, getY());
     }
     
+    /**
+     * Allows the player to jump using the up arrow key
+     */
     private void moveVertically()
     {
         int worldHeight = getWorld().getHeight() - 30;
@@ -70,6 +77,9 @@ public class Human extends Actor
             ySpeed =-jumpForce;
         }
         
+        /**
+         * Sets the player screen to Game Over when they touch a tumbleweed
+         */
         MyWorld world = (MyWorld) getWorld();
         if(isTouching(Obstacles.class))
         {

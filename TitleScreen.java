@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    //To keep count of what my labels are
+    //To keep count of what my labels are (real ones are below in prepare)
     Label titleLabel = new Label("Welcome to Tumbleweed", 60);
     Label moveLabel = new Label("Use Arrow Key to Move", 40);
     Label gameMecLabel = new Label("To Play Dogde the Tumbleweed", 40);
@@ -26,6 +26,9 @@ public class TitleScreen extends World
         prepare();
     }
     
+    /**
+     * Allows the user to entre the game using enter
+     */
     public void act()
     {
         //Start the game if user presses the space bar
@@ -39,6 +42,7 @@ public class TitleScreen extends World
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
+     * Give game name, how to move, what to do and how to start playing
      */
     private void prepare()
     {
