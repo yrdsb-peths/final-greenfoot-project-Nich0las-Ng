@@ -65,7 +65,7 @@ public class Human extends Actor
             }
         }
         
-        if(onGround && Greenfoot.isKeyDown("space")) 
+        if(onGround && Greenfoot.isKeyDown("up")) 
         {
             ySpeed =-jumpForce;
         }

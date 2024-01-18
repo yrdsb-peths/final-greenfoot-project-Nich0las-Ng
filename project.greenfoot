@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.Human.image=man.png
 class.MyWorld.image=Savannah.jpg
-class.Obstacles.image=tile000.png
+class.Obstacles.image=tumbleweed.png
 class.TitleScreen.image=Savannah.jpg
 dependency1.from=MyWorld
 dependency1.to=SimpleTimer

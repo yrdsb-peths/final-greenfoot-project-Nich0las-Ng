@@ -10,7 +10,7 @@ public class TitleScreen extends World
 {
     //To keep count of what my labels are
     Label titleLabel = new Label("Welcome to Tumbleweed", 60);
-    Label moveLabel = new Label("Press Space to Jump", 40);
+    Label moveLabel = new Label("Use Arrow Key to Move", 40);
     Label gameMecLabel = new Label("To Play Dogde the Tumbleweed", 40);
     Label startLabel = new Label("Press <<ENTER>> to start", 40);
     /**
@@ -45,7 +45,7 @@ public class TitleScreen extends World
         Label label = new Label("Welcome to Tumbleweed", 60);
         addObject(label,348,90);
         label.setLocation(300,90);
-        Label label2 = new Label("Press SPACE to Jump", 40);
+        Label label2 = new Label("Use Arrow Key to Move", 40);
         addObject(label2,275,160);
         label2.setLocation(300,170);
         Label label3 = new Label("To Play Dogde the Tumbleweed", 40);

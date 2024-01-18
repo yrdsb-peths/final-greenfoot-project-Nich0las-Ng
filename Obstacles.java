@@ -14,7 +14,7 @@ public class Obstacles extends Actor
      */
     int speed;
     
-    GreenfootImage[] idle = new GreenfootImage[5];
+    GreenfootImage[] idle = new GreenfootImage[8];
     SimpleTimer animationTimer = new SimpleTimer();
     
     public Obstacles()
