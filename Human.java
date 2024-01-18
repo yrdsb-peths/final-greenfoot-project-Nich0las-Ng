@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Human here.
+ * Makes the player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Nicholas N) 
+ * @version (Jan 17 2024)
  */
 public class Human extends Actor
 {
